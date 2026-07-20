@@ -1,0 +1,1 @@
+from ui_components import apply_modern_styles
