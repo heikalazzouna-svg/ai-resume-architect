@@ -10,9 +10,11 @@ A next-generation, AI-powered platform designed to optimize resumes and showcase
 
 <!-- To add your images, upload them to your GitHub repo, then replace the placeholder links below with the actual paths (e.g., docs/dashboard.png) -->
 
-![Smart Resume AI Dashboard Preview](insert_image_1_url_here.png)
+<img width="1363" height="722" alt="image" src="https://github.com/user-attachments/assets/f24ef400-4dc5-44c6-9106-078351d6fb73" />
 
-![AI Resume Analyzer Preview](insert_image_2_url_here.png)
+
+<img width="1298" height="711" alt="image" src="https://github.com/user-attachments/assets/c810fde8-3761-4251-828b-2cdc8223f35a" />
+
 
 ---
 
