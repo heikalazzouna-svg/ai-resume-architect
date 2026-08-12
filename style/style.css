@@ -308,12 +308,76 @@ section[data-testid="stSidebar"] div[data-testid="stExpander"] {
 .stTextArea > div > div {
     background: rgba(255, 255, 255, 0.03) !important;
     border: 1px solid var(--color-border) !important;
-    color: var(--color-text) !important;
     border-radius: var(--radius-md) !important;
     transition: var(--transition) !important;
     font-family: var(--font-sans) !important;
 }
 
+/* Force text color AND background directly on the input elements */
+.stTextInput input,
+.stNumberInput input,
+.stTextArea textarea,
+.stSelectbox select {
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    background: rgba(15, 23, 42, 0.95) !important;
+    caret-color: #38bdf8 !important;
+}
+
+/* Also catch any nested divs Streamlit wraps around textareas */
+.stTextArea div[data-baseweb="textarea"],
+.stTextArea div[data-baseweb="base-input"],
+.stTextInput div[data-baseweb="input"],
+.stTextInput div[data-baseweb="base-input"] {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    background: rgba(15, 23, 42, 0.95) !important;
+}
+
+/* Nuclear override: catch ALL textarea and input inside the main content */
+.main textarea,
+.main input[type="text"],
+.main input[type="email"],
+.main input[type="password"],
+.main input[type="number"] {
+    background-color: rgba(15, 23, 42, 0.95) !important;
+    background: rgba(15, 23, 42, 0.95) !important;
+    color: #f8fafc !important;
+    -webkit-text-fill-color: #f8fafc !important;
+}
+
+/* Placeholder styling */
+.stTextInput input::placeholder,
+.stNumberInput input::placeholder,
+.stTextArea textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Fix autofill background issue */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+textarea:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #0f172a inset !important;
+    -webkit-text-fill-color: #f8fafc !important;
+}
+
+/* Proper text selection highlight */
+::selection {
+    background: rgba(99, 102, 241, 0.6) !important;
+    color: #ffffff !important;
+}
+::-moz-selection {
+    background: rgba(99, 102, 241, 0.6) !important;
+    color: #ffffff !important;
+}
+
+/* Focus states */
 .stTextInput > div > div:focus-within,
 .stSelectbox > div > div:focus-within,
 .stTextArea > div > div:focus-within {

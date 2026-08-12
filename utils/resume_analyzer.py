@@ -11,7 +11,9 @@ class ResumeAnalyzer:
         self.document_types = {
             'resume': [
                 'experience', 'education', 'skills', 'work', 'project', 'objective',
-                'summary', 'employment', 'qualification', 'achievements'
+                'summary', 'employment', 'qualification', 'achievements',
+                'professional background', 'work history', 'career', 'profile',
+                'certifications', 'technologies', 'tools', 'languages'
             ],
             'marksheet': [
                 'grade', 'marks', 'score', 'semester', 'cgpa', 'sgpa', 'examination',
@@ -41,8 +43,8 @@ class ResumeAnalyzer:
         # Get the highest scoring document type
         best_match = max(scores.items(), key=lambda x: x[1])
         
-        # Only return a document type if the score is significant
-        return best_match[0] if best_match[1] > 0.15 else 'unknown'
+        # Only return a document type if the score is significant (lowered threshold to 0.03 to be forgiving for short resumes)
+        return best_match[0] if best_match[1] > 0.03 else 'unknown'
         
     def calculate_keyword_match(self, resume_text, required_skills):
         resume_text = resume_text.lower()

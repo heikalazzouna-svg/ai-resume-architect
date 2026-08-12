@@ -10,7 +10,7 @@ from PIL import Image
 
 from ui_components import hero_section, page_header, apply_modern_styles, score_ring, metric_card, alert, section_divider
 from config.branding import APP_NAME, FOUNDER_NAME, SOCIAL_LINKS, FOUNDER_TITLE, FOUNDER_BIO
-from config.courses import COURSES_BY_CATEGORY, RESUME_VIDEOS, INTERVIEW_VIDEOS
+from config.courses import COURSES_BY_CATEGORY, RESUME_VIDEOS, INTERVIEW_VIDEOS, get_courses_for_role, get_category_for_role
 from config.job_roles import JOB_ROLES
 from config.database import save_resume_data, save_analysis_data, save_ai_analysis_data
 from utils.resume_parser import ResumeParser
